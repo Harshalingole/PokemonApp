@@ -23,15 +23,21 @@ const App = () => {
     }
   }, []);
   // Pagination
+  const totalResult = pokomon.length;
   const [pageNumber, setpageNumber] = useState(0);
-  const userPerPage = 10;
-  const pagesVisited = pageNumber + userPerPage;
+  // const pokemonPerPage = 10;
+  const [pokemonPerPage, setPokemonPerPage] = useState(10);
+  const pagesVisited = pageNumber + pokemonPerPage;
   // 40 + 10
   const displayPokomon = pokomon.slice(
     pagesVisited,
-    pagesVisited + userPerPage
+    pagesVisited + pokemonPerPage
   );
-  const pageCount = Math.ceil(pokomon.length / userPerPage);
+  const fetchMoreData = () => {
+    setPokemonPerPage((prev) => (prev += 10));
+  };
+  console.log(displayPokomon);
+  const pageCount = Math.ceil(pokomon.length / pokemonPerPage);
   const changePage = ({ selected }) => {
     setpageNumber(selected);
   };
@@ -69,7 +75,15 @@ const App = () => {
         nextClassName={"pg-next"}
         activeClassName={"pg-active"}
       />
-      <CardList pokomons={filterpokomon} display={displayPokomon} />
+      <CardList
+        pokomons={filterpokomon}
+        display={displayPokomon}
+        pageNum={pageNumber}
+        setpageNum={setpageNumber}
+        pokemonPerPage={pokemonPerPage}
+        fetchMoreData={fetchMoreData}
+        totalResult={totalResult}
+      />
     </div>
   );
 };
