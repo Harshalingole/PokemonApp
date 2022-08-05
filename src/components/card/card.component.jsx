@@ -1,6 +1,6 @@
 import "./card.style.css";
 const Card = ({ pokomon }) => {
-  console.log(pokomon);
+  // console.log(pokomon);
   const { id, name, hp, images, attacks } = pokomon;
   return (
     <div className="card-container" key={id}>
