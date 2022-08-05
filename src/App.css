@@ -5,3 +5,12 @@ body {
   background: aliceblue;
   text-align: center;
 }
+.paginationBTn {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  gap: 2rem;
+  cursor: pointer;
+  margin-bottom: 3rem;
+  justify-content: center;
+}

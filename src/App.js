@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     try {
-      fetch("https://api.pokemontcg.io/v2/cards?page=1&pageSize=50")
+      fetch("https://api.pokemontcg.io/v2/cards?page=1&pageSize=500")
         .then((response) => response.json())
         .then((users) => setpokomon(users.data));
       setpokomon((prev) => prev.slice(0, 5));
