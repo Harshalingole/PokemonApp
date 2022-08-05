@@ -3,16 +3,8 @@ import Card from "../card/card.component";
 import "./card-list.styles.css";
 
 const CardList = (props) => {
-  const {
-    pokomons,
-    display,
-    pageNum,
-    setpageNum,
-    pokemonPerPage,
-    fetchMoreData,
-    totalResult,
-  } = props;
-  console.log(display);
+  const { display, fetchMoreData, totalResult, pokomon } = props;
+  // console.log(display);
   console.log(display.length);
 
   return (

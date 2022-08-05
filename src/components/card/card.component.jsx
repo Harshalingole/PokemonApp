@@ -1,6 +1,5 @@
 import "./card.style.css";
 const Card = ({ pokomon }) => {
-  // console.log(pokomon);
   const { id, name, hp, images, attacks } = pokomon;
   return (
     <div className="card-container" key={id}>
@@ -15,7 +14,7 @@ const Card = ({ pokomon }) => {
       {/* Power */}
       <div className="power">
         <p>Attacks</p>
-        <p>{attacks[0]["name"]}</p>
+        {attacks ? <p>{attacks[0]["name"]}</p> : <p>nA</p>}
       </div>
       {/* Abilities */}
       <div className="power">

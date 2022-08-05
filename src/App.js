@@ -24,6 +24,7 @@ const App = () => {
   }, []);
   // Pagination
   const totalResult = pokomon.length;
+  console.log(totalResult);
   const [pageNumber, setpageNumber] = useState(0);
   // const pokemonPerPage = 10;
   const [pokemonPerPage, setPokemonPerPage] = useState(10);
@@ -34,7 +35,7 @@ const App = () => {
     pagesVisited + pokemonPerPage
   );
   const fetchMoreData = () => {
-    setPokemonPerPage((prev) => (prev += 10));
+    setPokemonPerPage((prev) => (prev += 5));
   };
   console.log(displayPokomon);
   const pageCount = Math.ceil(pokomon.length / pokemonPerPage);
@@ -78,11 +79,9 @@ const App = () => {
       <CardList
         pokomons={filterpokomon}
         display={displayPokomon}
-        pageNum={pageNumber}
-        setpageNum={setpageNumber}
-        pokemonPerPage={pokemonPerPage}
         fetchMoreData={fetchMoreData}
         totalResult={totalResult}
+        pokomon={pokomon}
       />
     </div>
   );
