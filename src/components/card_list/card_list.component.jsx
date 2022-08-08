@@ -3,7 +3,7 @@ import Card from "../card/card.component";
 import "./card-list.styles.css";
 
 const CardList = (props) => {
-  const { display, fetchMoreData, totalResult, pokomon } = props;
+  const { display, fetchMoreData, } = props;
   // console.log(display);
   console.log(display.length);
 
